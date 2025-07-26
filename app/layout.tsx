@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import {Figtree} from "next/font/google"
+import Sidebar from "@/components/Sidebar";
 
 const inter = Figtree({subsets: ['latin']})
+
 
 
 export const metadata: Metadata = {
@@ -18,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
+        <Sidebar>
+          {children}
+        </Sidebar>
       </body>
     </html>
   );
